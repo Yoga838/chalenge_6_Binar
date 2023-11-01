@@ -1,7 +1,8 @@
-const { PrismaClient} = require('@prisma/client')
+const prisma = require ('../libs/prisma') 
+// const { PrismaClient} = require('@prisma/client')
 const imageKit = require('../libs/imageKit')
 
-const prisma = new PrismaClient()
+// const prisma = new PrismaClient()
 
 module.exports = {
     imageUpload : async(req,res) => {
