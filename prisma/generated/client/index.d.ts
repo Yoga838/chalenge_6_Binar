@@ -881,6 +881,7 @@ export namespace Prisma {
     judul: string | null
     deskripsi: string | null
     imageLink: string | null
+    file_id: string | null
   }
 
   export type NewsInfoMaxAggregateOutputType = {
@@ -888,6 +889,7 @@ export namespace Prisma {
     judul: string | null
     deskripsi: string | null
     imageLink: string | null
+    file_id: string | null
   }
 
   export type NewsInfoCountAggregateOutputType = {
@@ -895,6 +897,7 @@ export namespace Prisma {
     judul: number
     deskripsi: number
     imageLink: number
+    file_id: number
     _all: number
   }
 
@@ -912,6 +915,7 @@ export namespace Prisma {
     judul?: true
     deskripsi?: true
     imageLink?: true
+    file_id?: true
   }
 
   export type NewsInfoMaxAggregateInputType = {
@@ -919,6 +923,7 @@ export namespace Prisma {
     judul?: true
     deskripsi?: true
     imageLink?: true
+    file_id?: true
   }
 
   export type NewsInfoCountAggregateInputType = {
@@ -926,6 +931,7 @@ export namespace Prisma {
     judul?: true
     deskripsi?: true
     imageLink?: true
+    file_id?: true
     _all?: true
   }
 
@@ -1020,6 +1026,7 @@ export namespace Prisma {
     judul: string
     deskripsi: string
     imageLink: string
+    file_id: string
     _count: NewsInfoCountAggregateOutputType | null
     _avg: NewsInfoAvgAggregateOutputType | null
     _sum: NewsInfoSumAggregateOutputType | null
@@ -1046,6 +1053,7 @@ export namespace Prisma {
     judul?: boolean
     deskripsi?: boolean
     imageLink?: boolean
+    file_id?: boolean
   }, ExtArgs["result"]["newsInfo"]>
 
   export type newsInfoSelectScalar = {
@@ -1053,6 +1061,7 @@ export namespace Prisma {
     judul?: boolean
     deskripsi?: boolean
     imageLink?: boolean
+    file_id?: boolean
   }
 
 
@@ -1064,6 +1073,7 @@ export namespace Prisma {
       judul: string
       deskripsi: string
       imageLink: string
+      file_id: string
     }, ExtArgs["result"]["newsInfo"]>
     composites: {}
   }
@@ -1462,6 +1472,7 @@ export namespace Prisma {
     readonly judul: FieldRef<"newsInfo", 'String'>
     readonly deskripsi: FieldRef<"newsInfo", 'String'>
     readonly imageLink: FieldRef<"newsInfo", 'String'>
+    readonly file_id: FieldRef<"newsInfo", 'String'>
   }
     
 
@@ -1767,7 +1778,8 @@ export namespace Prisma {
     id: 'id',
     judul: 'judul',
     deskripsi: 'deskripsi',
-    imageLink: 'imageLink'
+    imageLink: 'imageLink',
+    file_id: 'file_id'
   };
 
   export type NewsInfoScalarFieldEnum = (typeof NewsInfoScalarFieldEnum)[keyof typeof NewsInfoScalarFieldEnum]
@@ -1847,6 +1859,7 @@ export namespace Prisma {
     judul?: StringFilter<"newsInfo"> | string
     deskripsi?: StringFilter<"newsInfo"> | string
     imageLink?: StringFilter<"newsInfo"> | string
+    file_id?: StringFilter<"newsInfo"> | string
   }
 
   export type newsInfoOrderByWithRelationInput = {
@@ -1854,6 +1867,7 @@ export namespace Prisma {
     judul?: SortOrder
     deskripsi?: SortOrder
     imageLink?: SortOrder
+    file_id?: SortOrder
   }
 
   export type newsInfoWhereUniqueInput = Prisma.AtLeast<{
@@ -1864,6 +1878,7 @@ export namespace Prisma {
     judul?: StringFilter<"newsInfo"> | string
     deskripsi?: StringFilter<"newsInfo"> | string
     imageLink?: StringFilter<"newsInfo"> | string
+    file_id?: StringFilter<"newsInfo"> | string
   }, "id">
 
   export type newsInfoOrderByWithAggregationInput = {
@@ -1871,6 +1886,7 @@ export namespace Prisma {
     judul?: SortOrder
     deskripsi?: SortOrder
     imageLink?: SortOrder
+    file_id?: SortOrder
     _count?: newsInfoCountOrderByAggregateInput
     _avg?: newsInfoAvgOrderByAggregateInput
     _max?: newsInfoMaxOrderByAggregateInput
@@ -1886,12 +1902,14 @@ export namespace Prisma {
     judul?: StringWithAggregatesFilter<"newsInfo"> | string
     deskripsi?: StringWithAggregatesFilter<"newsInfo"> | string
     imageLink?: StringWithAggregatesFilter<"newsInfo"> | string
+    file_id?: StringWithAggregatesFilter<"newsInfo"> | string
   }
 
   export type newsInfoCreateInput = {
     judul: string
     deskripsi: string
     imageLink: string
+    file_id: string
   }
 
   export type newsInfoUncheckedCreateInput = {
@@ -1899,12 +1917,14 @@ export namespace Prisma {
     judul: string
     deskripsi: string
     imageLink: string
+    file_id: string
   }
 
   export type newsInfoUpdateInput = {
     judul?: StringFieldUpdateOperationsInput | string
     deskripsi?: StringFieldUpdateOperationsInput | string
     imageLink?: StringFieldUpdateOperationsInput | string
+    file_id?: StringFieldUpdateOperationsInput | string
   }
 
   export type newsInfoUncheckedUpdateInput = {
@@ -1912,6 +1932,7 @@ export namespace Prisma {
     judul?: StringFieldUpdateOperationsInput | string
     deskripsi?: StringFieldUpdateOperationsInput | string
     imageLink?: StringFieldUpdateOperationsInput | string
+    file_id?: StringFieldUpdateOperationsInput | string
   }
 
   export type newsInfoCreateManyInput = {
@@ -1919,12 +1940,14 @@ export namespace Prisma {
     judul: string
     deskripsi: string
     imageLink: string
+    file_id: string
   }
 
   export type newsInfoUpdateManyMutationInput = {
     judul?: StringFieldUpdateOperationsInput | string
     deskripsi?: StringFieldUpdateOperationsInput | string
     imageLink?: StringFieldUpdateOperationsInput | string
+    file_id?: StringFieldUpdateOperationsInput | string
   }
 
   export type newsInfoUncheckedUpdateManyInput = {
@@ -1932,6 +1955,7 @@ export namespace Prisma {
     judul?: StringFieldUpdateOperationsInput | string
     deskripsi?: StringFieldUpdateOperationsInput | string
     imageLink?: StringFieldUpdateOperationsInput | string
+    file_id?: StringFieldUpdateOperationsInput | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -1965,6 +1989,7 @@ export namespace Prisma {
     judul?: SortOrder
     deskripsi?: SortOrder
     imageLink?: SortOrder
+    file_id?: SortOrder
   }
 
   export type newsInfoAvgOrderByAggregateInput = {
@@ -1976,6 +2001,7 @@ export namespace Prisma {
     judul?: SortOrder
     deskripsi?: SortOrder
     imageLink?: SortOrder
+    file_id?: SortOrder
   }
 
   export type newsInfoMinOrderByAggregateInput = {
@@ -1983,6 +2009,7 @@ export namespace Prisma {
     judul?: SortOrder
     deskripsi?: SortOrder
     imageLink?: SortOrder
+    file_id?: SortOrder
   }
 
   export type newsInfoSumOrderByAggregateInput = {

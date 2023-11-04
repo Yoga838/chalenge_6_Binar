@@ -9,11 +9,4 @@ router.get('/getData/:id',getDetailData)
 router.delete('/deleteData/:id',deleteData)
 router.patch('/updateData/:id',editData)
 
-router.get('/', (req, res) => {
-    return res.json({
-        message: "Hello World"
-    })
-})
-
-
 module.exports = router
