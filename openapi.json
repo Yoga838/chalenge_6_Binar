@@ -5,6 +5,11 @@
       "title": "Backend Js 2 Chalenge 6 Api",
       "description": "API untuk menyimpan data berita"
     },
+    "servers": [
+        {
+          "url": "https://chalenge-6-binar.vercel.app/dokumentasi"
+        }
+      ],
     "tags":[{
         "name":"news Data",
         "description" : "Menyimpan data berita"
