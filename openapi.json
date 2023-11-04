@@ -1,0 +1,227 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Backend Js 2 Chalenge 6 Api",
+      "description": "API untuk menyimpan data berita"
+    },
+    "tags":[{
+        "name":"news Data",
+        "description" : "Menyimpan data berita"
+    }],
+    "basePath": "/api/v1",
+    "paths": {
+      "/uploadFile": {
+        "post": {
+          "summary": "Upload a file",
+          "tags":["news Data"],
+          "parameters": [
+            {
+              "name": "image",
+              "in": "formData",
+              "type": "file",
+              "description": "Image file to upload"
+            },
+            {
+              "name": "judul",
+              "in": "formData",
+              "type": "string",
+              "description": "Title of the news"
+            },
+            {
+              "name": "deskripsi",
+              "in": "formData",
+              "type": "string",
+              "description": "Description of the news"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful upload",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success to save data"
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "judul": {
+                        "type": "string"
+                      },
+                      "deskripsi": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/getData": {
+        "get": {
+          "summary": "Get all news data",
+          "tags":["news Data"],
+          "responses": {
+            "200": {
+              "description": "Successful retrieval",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/getData/{id}": {
+        "get": {
+          "summary": "Get a specific news item by ID",
+          "tags":["news Data"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "integer",
+              "required": true,
+              "description": "ID of the news item"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful retrieval",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/deleteData/{id}": {
+        "delete": {
+          "summary": "Delete a news item by ID",
+          "tags":["news Data"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "integer",
+              "required": true,
+              "description": "ID of the news item to delete"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful deletion",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/updateData/{id}": {
+        "patch": {
+          "summary": "Update a news item by ID",
+          "tags":["news Data"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "integer",
+              "required": true,
+              "description": "ID of the news item to update"
+            },
+            {
+              "name": "judul",
+              "in": "formData",
+              "type": "string",
+              "description": "Updated title of the news"
+            },
+            {
+              "name": "deskripsi",
+              "in": "formData",
+              "type": "string",
+              "description": "Updated description of the news"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful update",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
