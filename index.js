@@ -7,8 +7,7 @@ const bodyParser = require('body-parser')
 const prisma = require('./libs/prisma')
 const swagerUi = require('swagger-ui-express')
 const swaggerJson = require('./openapi.json')
-
-
+const CSS_URL ="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
 app.use(express.json({strict : false}))
 app.use(
@@ -17,7 +16,7 @@ app.use(
   }),
 );
 
-app.use('/dokumentasi', swagerUi.serve, swagerUi.setup(swaggerJson))
+app.use('/dokumentasi', swagerUi.serve, swagerUi.setup(swaggerJson,{ customCssUrl: CSS_URL }))
 app.use('/api/v1', router)
 
 app.use((req, res, next) => {
