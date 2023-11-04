@@ -17,4 +17,5 @@ model newsInfo{
   judul     String
   deskripsi String
   imageLink String
+  file_id   String
 }

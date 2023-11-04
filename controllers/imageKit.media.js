@@ -1,8 +1,6 @@
 const prisma = require ('../libs/prisma') 
-// const { PrismaClient} = require('@prisma/client')
 const imageKit = require('../libs/imageKit')
 
-// const prisma = new PrismaClient()
 
 module.exports = {
     imageUpload : async(req,res) => {
@@ -18,7 +16,8 @@ module.exports = {
                 data:{
                     judul:judul,
                     deskripsi:deskripsi,
-                    imageLink: uploadFile.url.toString()
+                    imageLink: uploadFile.url.toString(),
+                    file_id : uploadFile.fileId
                 }
             })
 
@@ -76,6 +75,10 @@ module.exports = {
     deleteData: async(req,res) =>{
         try{
             const id = parseInt(req.params.id)
+            const getData = await prisma.newsInfo.findFirst({
+                where:{id:id}
+            })
+            const deleteImage =await imageKit.deleteFile(getData.file_id)
             const response = await prisma.newsInfo.delete({
                 where:{
                     id:id

@@ -111,7 +111,8 @@ exports.Prisma.NewsInfoScalarFieldEnum = {
   id: 'id',
   judul: 'judul',
   deskripsi: 'deskripsi',
-  imageLink: 'imageLink'
+  imageLink: 'imageLink',
+  file_id: 'file_id'
 };
 
 exports.Prisma.SortOrder = {
